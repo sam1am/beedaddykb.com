@@ -936,6 +936,84 @@ h1, h2, h3, h4, h5, h6 {
     animation: rotate-slow 10s linear infinite;
 }
 
+/* Press Section */
+.press {
+    padding: 80px 0;
+    background: var(--cream);
+    position: relative;
+}
+
+.press-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.press-content h3 {
+    color: var(--dark-amber);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.press-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+.press-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.press-publication {
+    color: var(--honey-gold);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.press-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.press-title {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.press-link:hover .press-title {
+    border-color: var(--honey-gold);
+}
+
+.press-arrow {
+    color: var(--honey-gold);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.press-link:hover .press-arrow {
+    transform: translate(2px, -2px);
+}
+
+.press-date {
+    margin-top: 0.5rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
 /* Footer */
 .footer {
     background: var(--dark-brown);
