@@ -418,22 +418,28 @@ document.addEventListener('mousemove', (e) => {
 const animateNumbers = () => {
     document.querySelectorAll('.stat-number').forEach(stat => {
         const updateCount = () => {
-            const target = parseInt(stat.textContent.replace('K', '000'));
+            // Get target from data attribute
+            const target = parseInt(stat.dataset.target);
             const count = parseInt(stat.dataset.count || 0);
-            const increment = target / 100;
+            const increment = Math.max(1, target / 100);
 
             if (count < target) {
                 stat.dataset.count = Math.ceil(count + increment);
-                const display = stat.dataset.count;
-                if (target >= 1000) {
-                    stat.textContent = Math.floor(display / 1000) + 'K';
+                const display = parseInt(stat.dataset.count);
+
+                // Format display based on size
+                if (target >= 10000) {
+                    const thousands = Math.floor(display / 1000);
+                    stat.textContent = thousands + 'K';
                 } else {
                     stat.textContent = display;
                 }
                 setTimeout(updateCount, 20);
             } else {
-                if (target >= 1000) {
-                    stat.textContent = Math.floor(target / 1000) + 'K';
+                // Final display - ensure exact target is shown
+                if (target >= 10000) {
+                    const thousands = Math.floor(target / 1000);
+                    stat.textContent = thousands + 'K';
                 } else {
                     stat.textContent = target;
                 }
